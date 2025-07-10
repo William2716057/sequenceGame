@@ -1,0 +1,10 @@
+C:\Users\wills\Desktop\Shortcuts\Files\Github\sequenceGame\sequenceGame\bin\Debug\sequenceGame.exe.config
+C:\Users\wills\Desktop\Shortcuts\Files\Github\sequenceGame\sequenceGame\bin\Debug\sequenceGame.exe
+C:\Users\wills\Desktop\Shortcuts\Files\Github\sequenceGame\sequenceGame\bin\Debug\sequenceGame.pdb
+C:\Users\wills\Desktop\Shortcuts\Files\Github\sequenceGame\sequenceGame\obj\Debug\sequenceGame.csproj.AssemblyReference.cache
+C:\Users\wills\Desktop\Shortcuts\Files\Github\sequenceGame\sequenceGame\obj\Debug\sequenceGame.Properties.Resources.resources
+C:\Users\wills\Desktop\Shortcuts\Files\Github\sequenceGame\sequenceGame\obj\Debug\sequenceGame.csproj.GenerateResource.cache
+C:\Users\wills\Desktop\Shortcuts\Files\Github\sequenceGame\sequenceGame\obj\Debug\sequenceGame.csproj.CoreCompileInputs.cache
+C:\Users\wills\Desktop\Shortcuts\Files\Github\sequenceGame\sequenceGame\obj\Debug\sequenceGame.exe
+C:\Users\wills\Desktop\Shortcuts\Files\Github\sequenceGame\sequenceGame\obj\Debug\sequenceGame.pdb
+C:\Users\wills\Desktop\Shortcuts\Files\Github\sequenceGame\sequenceGame\obj\Debug\sequenceGame.Form1.resources
