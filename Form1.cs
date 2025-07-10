@@ -37,7 +37,7 @@ namespace sequenceGame
 
             if (distance <= centerCircleBounds.Width / 2)
             {
-                MessageBox.Show("Circle Click Successful");
+                //MessageBox.Show("Circle Click Successful");
                 //remove these two lines
                 GenerateRandomCircles();
                 Invalidate();
