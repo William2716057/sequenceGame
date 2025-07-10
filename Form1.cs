@@ -10,16 +10,35 @@ namespace sequenceGame
         private List<Circle> circles;
         private const int CircleRadius = 30;
         private const int CircleCount = 5;
+        private Rectangle centerCircleBounds;
 
+        // ✅ Constructor (required to initialize everything)
         public Form1()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
             this.BackColor = Color.Black;
-            this.ClientSize = new Size(800, 600);
-            //this.Text = "Random White Circles";
+            this.MouseClick += new MouseEventHandler(OnMouseClick);
+
+            // Define center red circle
+            int centerRadius = 50;
+            int centerX = this.ClientSize.Width / 2 - centerRadius;
+            int centerY = this.ClientSize.Height / 2 - centerRadius;
+            centerCircleBounds = new Rectangle(centerX, centerY, centerRadius * 2, centerRadius * 2);
 
             GenerateRandomCircles();
+        }
+
+        private void OnMouseClick(object sender, MouseEventArgs e)
+        {
+            double dx = e.X - (centerCircleBounds.Left + centerCircleBounds.Width / 2);
+            double dy = e.Y - (centerCircleBounds.Top + centerCircleBounds.Height / 2);
+            double distance = Math.Sqrt(dx * dx + dy * dy);
+
+            if (distance <= centerCircleBounds.Width / 2)
+            {
+                MessageBox.Show("Circle Click Successful");
+            }
         }
 
         private void GenerateRandomCircles()
@@ -40,27 +59,43 @@ namespace sequenceGame
             base.OnPaint(e);
             Graphics g = e.Graphics;
 
-            using (Brush brush = new SolidBrush(Color.White))
+            // Draw random white circles
+            using (Brush whiteBrush = new SolidBrush(Color.White))
             {
                 foreach (var circle in circles)
                 {
-                    g.FillEllipse(brush, circle.X - circle.Radius, circle.Y - circle.Radius, circle.Radius * 2, circle.Radius * 2);
+                    g.FillEllipse(whiteBrush, circle.X - circle.Radius, circle.Y - circle.Radius, circle.Radius * 2, circle.Radius * 2);
                 }
             }
+
+            // Draw center red circle
+            using (Brush redBrush = new SolidBrush(Color.Red))
+            {
+                g.FillEllipse(redBrush, centerCircleBounds);
+            }
         }
-    }
 
-    public class Circle
-    {
-        public int X { get; }
-        public int Y { get; }
-        public int Radius { get; }
+        /*     private void InitializeComponent()
+             {
+                 this.SuspendLayout();
+                 this.ClientSize = new System.Drawing.Size(800, 600);
+                 this.Name = "Form1";
+                 this.ResumeLayout(false);
+             }
+         } */
 
-        public Circle(int x, int y, int radius)
+        public class Circle
         {
-            X = x;
-            Y = y;
-            Radius = radius;
+            public int X { get; }
+            public int Y { get; }
+            public int Radius { get; }
+
+            public Circle(int x, int y, int radius)
+            {
+                X = x;
+                Y = y;
+                Radius = radius;
+            }
         }
     }
 }
